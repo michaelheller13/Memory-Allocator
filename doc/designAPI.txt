@@ -1,0 +1,30 @@
+Michael Heller
+Lab 7
+designAPI.txt
+
+Additional functions:
+
+void *first_fit(size_t size):
+
+This function uses the iterating function of the dlist structure to iterate through the
+doubly linked free_list.  It returns the first node (memory block) in the free_list the has a
+size bigger than the size of the input process.  Therefore, this provides the first possible
+fit and successfully completes the first-fit allocation algorithm.
+
+void *worst_fit(size_t size):
+
+This function uses the iterating function of the dlist structure to iterate through the doubly linked
+free_list.  It first checks to see if the node (memory block) is big enough for the process' given input size.  It then checks to see if the memory block of the current node is bigger than the current "biggest"
+block size that is tracked throughout the iteration.  If the block size is bigger, it sets the return pointer
+to that memory block and sets the new biggest block size to that value.  When the entire free_list is iterated through, it returns the end result pointer to the biggest, valid memory block node.  Thus, this
+completes the worst-fit allocation algorithm.
+
+void *best_fit(size_t size):
+
+This function uses the iterating function of the dlist structure to iterate through the doubly linked
+free_list.  It first checks to see if the node (memory block) is big enough for the process' given input
+size.  It then checks to see if the memory block of the current node is smaller than the "smallest" block
+size that is being tracked throughout the iteration.  If the block size is smaller, it sets the return
+pointer to that memory block, and the new smallest size to that value.  When the entire free_list is
+iterated through, it returns the end result pointer to the smallest, valid memory block for the input.
+Thus, this completes the best-fit allocation algoritm.
